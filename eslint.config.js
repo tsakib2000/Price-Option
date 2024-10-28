@@ -10,12 +10,12 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {...globals.browser,require:true},
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
-        node:true
+      
       },
     },
     settings: { react: { version: '18.3' } },
@@ -33,7 +33,9 @@ export default [
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+        
       ],
+      
     },
     
   },
